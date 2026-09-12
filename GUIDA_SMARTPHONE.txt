@@ -1,0 +1,18 @@
+METEO FLASKIO — BUILD SOLO DA SMARTPHONE
+
+1. Apri GitHub dal Galaxy e accedi.
+2. Crea un repository chiamato meteo-flaskio-android.
+3. Carica il CONTENUTO di questa cartella nel repository.
+   GitHub deve vedere app, .github, settings.gradle.kts e build.gradle.kts.
+4. Conferma con Commit changes.
+5. Apri Actions.
+6. Apri "Compila Meteo Flaskio APK".
+7. Tocca Run workflow > Run workflow.
+8. Attendi il segno verde.
+9. Apri la build terminata e, in Artifacts, scarica "Meteo-Flaskio-APK".
+10. Estrai lo ZIP scaricato e tocca Meteo-Flaskio.apk.
+11. Se Android lo richiede, consenti l'installazione da questa fonte.
+12. Installa.
+13. Home > pressione prolungata > Widget > Meteo Flaskio.
+
+Configurazione build: Java 17, Gradle 8.9, Android Gradle Plugin 8.7.3.
