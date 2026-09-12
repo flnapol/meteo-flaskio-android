@@ -23,7 +23,7 @@ object WidgetUpdater {
                         v.setTextViewText(R.id.minmax,"↑ ${d.max}°   ↓ ${d.min}°")
                         setIfExists(v, layout, R.id.details,"💧 ${d.humidity}%   🌬 ${d.wind} km/h ${d.windDir}")
                         setIfExists(v, layout, R.id.air,"Aria: ${WeatherRepository.airText(d.aqi)}${d.aqi?.let{" · AQI $it"}?:""}")
-                        setIfExists(v, layout, R.id.hail,"Grandine: rischio ${d.hail}")
+                        setIfExists(v, layout, R.id.hail,"Grandine: rischio ${d.hailRisk}")
                         val forecast=d.days.joinToString("     "){"${it.label} ${WeatherRepository.symbol(it.code)} ${it.min}°/${it.max}°"}
                         setIfExists(v, layout, R.id.forecast,forecast)
                         setIfExists(v, layout, R.id.updated,"Agg. "+LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm")))
