@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
@@ -19,9 +21,12 @@ class MainActivity : ComponentActivity() {
                 permissions[Manifest.permission.ACCESS_FINE_LOCATION] == true ||
                 permissions[Manifest.permission.ACCESS_COARSE_LOCATION] == true
 
-            if (granted) {
-                // La posizione verrà utilizzata dai servizi meteo.
+        if (granted) {
+            lifecycleScope.launch {
+                val location = LocationManager.getCurrentLocation(this@MainActivity)
+                if (location != null) LocationStore.save(this@MainActivity, location)
             }
+        }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
