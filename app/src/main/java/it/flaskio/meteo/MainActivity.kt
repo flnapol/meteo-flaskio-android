@@ -1,13 +1,13 @@
 package it.flaskio.meteo
 
 import android.Manifest
-import android.app.Activity
+import androidx.activity.ComponentActivity
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.result.contract.ActivityResultContracts
 
-class MainActivity : Activity() {
+class MainActivity : ComponentActivity() {
 
     private lateinit var webView: WebView
 

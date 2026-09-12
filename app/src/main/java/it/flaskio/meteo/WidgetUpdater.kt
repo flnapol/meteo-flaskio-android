@@ -12,7 +12,7 @@ object WidgetUpdater {
     fun update(context:Context, manager:AppWidgetManager, ids:IntArray, layout:Int) {
         CoroutineScope(Dispatchers.IO).launch {
             val location = LocationStore.load(context)
-                val d = if (location != null) try { WeatherRepository.fetch(location) } catch (_:Exception) { null }
+            val d = if (location != null) try { WeatherRepository.fetch(location) } catch (_:Exception) { null } else null
             withContext(Dispatchers.Main) {
                 ids.forEach { id ->
                     val v=RemoteViews(context.packageName,layout)
