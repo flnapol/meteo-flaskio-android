@@ -15,5 +15,6 @@ android {
     }
 }
 dependencies {
+    implementation("com.google.android.gms:play-services-location:21.3.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 }

@@ -23,10 +23,10 @@ data class WeatherData(
 data class ForecastDay(val label:String, val max:Int, val min:Int, val code:Int)
 
 object WeatherRepository {
-    private const val LAT = 41.893
-    private const val LON = 12.483
 
-    fun fetch(): WeatherData {
+    fun fetch(location: UserLocation): WeatherData {
+        val LAT = location.latitude
+        val LON = location.longitude
         val weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=$LAT&longitude=$LON" +
             "&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m" +
             "&hourly=precipitation_probability,cape&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
